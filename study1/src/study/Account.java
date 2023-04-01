@@ -1,6 +1,8 @@
 package study;
 
-public class Account {
+import javax.crypto.spec.PSource;
+
+class Account {
     private String owner;
     private long balance;
 
@@ -31,6 +33,11 @@ public class Account {
 
     }
     public long withdraw(long amount) {
+
+        if (balance < amount) {
+            System.out.println("잔액이 부족합니다.");
+            return balance;
+        }
         balance -= amount;
         return balance;
     }
@@ -41,12 +48,5 @@ public class Account {
                 "owner='" + owner + '\'' +
                 ", balance=" + balance +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        Account account = new Account("아무개", 10000000);
-        account.deposit(5000000);
-        account.withdraw(20000);
-        System.out.println(account);
     }
 }
