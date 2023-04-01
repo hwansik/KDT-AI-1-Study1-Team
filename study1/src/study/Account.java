@@ -24,4 +24,29 @@ public class Account {
     public void setBalance(long balance) {
         this.balance = balance;
     }
+
+    public long deposit(long amount) {
+        balance += amount;
+        return balance;
+
+    }
+    public long withdraw(long amount) {
+        balance -= amount;
+        return balance;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "owner='" + owner + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        Account account = new Account("아무개", 10000000);
+        account.deposit(5000000);
+        account.withdraw(20000);
+        System.out.println(account);
+    }
 }
