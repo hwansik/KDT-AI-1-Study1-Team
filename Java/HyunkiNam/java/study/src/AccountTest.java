@@ -7,9 +7,9 @@ public class AccountTest {
 
         account.deposit(50000);
         account.withdraw(30000);
+        System.out.println(account);
 
         account.withdraw(5000000);
-
         System.out.println(account);
     }
 }

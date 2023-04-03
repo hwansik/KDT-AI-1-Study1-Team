@@ -18,7 +18,7 @@ public class Account {
     public long withdraw(long amount){
         if(amount > this.balance){
             System.out.println("잔액이 부족합니다.");
-            return 0;
+            return balance;
         }
         System.out.println(amount + "원 출금");
         this.balance -= amount;
